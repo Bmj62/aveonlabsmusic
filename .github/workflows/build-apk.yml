@@ -35,8 +35,8 @@ jobs:
               -dname "CN=Android Debug,O=Android,C=US"
           fi
 
-      - name: Build Debug APK with Gradle
-        run: gradle assembleDebug
+      - name: Build Debug APK with Gradle Wrapper
+        run: ./gradlew assembleDebug
 
       - name: Upload APK as Artifact
         uses: actions/upload-artifact@v4
