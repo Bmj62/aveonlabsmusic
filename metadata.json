@@ -1,0 +1,7 @@
+{
+  "name": "aveonlabs MUSIC",
+  "description": "aveonlabs MUSIC player featuring cloud streaming, local audio playback, and personalized playlists.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
