@@ -30,7 +30,7 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Email
 import androidx.compose.material.icons.filled.GraphicEq
-import androidx.compose.material.icons.filled.HelpOutline
+import androidx.compose.material.icons.automirrored.filled.HelpOutline
 import androidx.compose.material.icons.filled.Lock
 import androidx.compose.material.icons.filled.MusicNote
 import androidx.compose.material.icons.filled.Palette
@@ -253,7 +253,7 @@ fun LoginScreen(
                 modifier = Modifier.testTag("auth_setup_guide_button")
             ) {
                 Icon(
-                    imageVector = Icons.Default.HelpOutline,
+                    imageVector = Icons.AutoMirrored.Filled.HelpOutline,
                     contentDescription = "Backend Guide",
                     tint = SpotifySubtext
                 )

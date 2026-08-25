@@ -42,9 +42,9 @@ import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.FavoriteBorder
 import androidx.compose.material.icons.filled.FolderSpecial
 import androidx.compose.material.icons.filled.GraphicEq
-import androidx.compose.material.icons.filled.HelpOutline
+import androidx.compose.material.icons.automirrored.filled.HelpOutline
+import androidx.compose.material.icons.automirrored.filled.Logout
 import androidx.compose.material.icons.filled.Lock
-import androidx.compose.material.icons.filled.Logout
 import androidx.compose.material.icons.filled.MusicNote
 import androidx.compose.material.icons.filled.Palette
 import androidx.compose.material.icons.filled.PlayArrow
@@ -425,7 +425,7 @@ private fun HomeTopBar(
                 modifier = Modifier.testTag("home_setup_guide_button")
             ) {
                 Icon(
-                    imageVector = Icons.Default.HelpOutline,
+                    imageVector = Icons.AutoMirrored.Filled.HelpOutline,
                     contentDescription = "Backend Guide",
                     tint = SpotifySubtext
                 )
@@ -436,7 +436,7 @@ private fun HomeTopBar(
                 modifier = Modifier.testTag("home_sign_out_button")
             ) {
                 Icon(
-                    imageVector = Icons.Default.Logout,
+                    imageVector = Icons.AutoMirrored.Filled.Logout,
                     contentDescription = "Sign Out",
                     tint = SpotifySubtext
                 )
