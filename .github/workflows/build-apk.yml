@@ -25,14 +25,13 @@ jobs:
         with:
           gradle-version: '9.3.1'
 
-      - name: Make gradlew executable
+      - name: Initialize Gradle Wrapper and Permissions
         run: |
-          if [ -f gradlew ]; then
-            chmod +x gradlew
-          else
+          if [ ! -f gradle/wrapper/gradle-wrapper.jar ]; then
+            echo "Gradle wrapper JAR not found. Generating with Gradle 9.3.1..."
             gradle wrapper --gradle-version 9.3.1
-            chmod +x gradlew
           fi
+          chmod +x gradlew || true
 
       - name: Generate Debug Keystore
         run: |
@@ -43,9 +42,9 @@ jobs:
               -dname "CN=Android Debug,O=Android,C=US"
           fi
 
-      - name: Build Debug APK with Gradle Wrapper
+      - name: Build Debug APK
         run: |
-          if [ -f gradlew ]; then
+          if [ -f gradle/wrapper/gradle-wrapper.jar ] && [ -f gradlew ]; then
             ./gradlew assembleDebug
           else
             gradle assembleDebug
