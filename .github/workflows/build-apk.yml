@@ -22,9 +22,17 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/actions/setup-gradle@v3
+        with:
+          gradle-version: '9.3.1'
 
       - name: Make gradlew executable
-        run: chmod +x gradlew || true
+        run: |
+          if [ -f gradlew ]; then
+            chmod +x gradlew
+          else
+            gradle wrapper --gradle-version 9.3.1
+            chmod +x gradlew
+          fi
 
       - name: Generate Debug Keystore
         run: |
@@ -36,7 +44,12 @@ jobs:
           fi
 
       - name: Build Debug APK with Gradle Wrapper
-        run: ./gradlew assembleDebug
+        run: |
+          if [ -f gradlew ]; then
+            ./gradlew assembleDebug
+          else
+            gradle assembleDebug
+          fi
 
       - name: Upload APK as Artifact
         uses: actions/upload-artifact@v4
